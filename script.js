@@ -42,9 +42,11 @@ cases.forEach(maCase => {
                 ecranScore();
             }
             if( tourJoueur === joueur1 ) {
-                tourJoueur = joueur2;                
+                tourJoueur = joueur2;
+                indicateur.innerText="Tour du joueur 2";              
             }
-            else { tourJoueur = joueur1;
+            else {  tourJoueur = joueur1;
+                    indicateur.innerText="Tour du joueur 1";
             }
         }
     });
