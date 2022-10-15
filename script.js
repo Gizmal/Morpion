@@ -6,6 +6,7 @@ const voile = document.createElement("div");
 voile.setAttribute("id", "voile");
 const joueur1 = 'X';
 const joueur2 = 'O';
+let msgFinPartie ="";
 let scoreJ1 = 0;
 let scoreJ2 = 0;
 let matchNul = 0;
@@ -31,14 +32,17 @@ cases.forEach(maCase => {
             if(controleVictoire(tourJoueur)) {
                 if(tourJoueur === joueur1) {
                     scoreJ1++;
+                    msgFinPartie ="Victoire Joueur 1";
                 }
                 else {
                     scoreJ2++;
+                    msgFinPartie ="Victoire Joueur 2";
                 }
                 ecranScore();
             };            
             if(nbreCoup === 9) {
-                matchNul++;                
+                matchNul++;
+                msgFinPartie ="Match Nul";                
                 ecranScore();
             }
             if( tourJoueur === joueur1 ) {
@@ -68,6 +72,7 @@ function ecranScore() {
     popup.classList.add("popup");
     popup.innerHTML =   `
                         <div class="popup-header">
+                            <h2>${msgFinPartie}</h2>
                             <p>Joueur 1  : ${scoreJ1}</p>
                             <p>Joueur 2  : ${scoreJ2}</p>
                             <p>Match Nul : ${matchNul}</p>                            
