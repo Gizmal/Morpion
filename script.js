@@ -3,6 +3,7 @@ const indicateur = document.getElementById('indicateur');
 const finDePartie = document.getElementById('finDePartie');
 const body = document.querySelector("body");
 const voile = document.createElement("div");
+const boutonRejouer = document.getElementById("rejouer");
 voile.setAttribute("id", "voile");
 const joueur1 = 'X';
 const joueur2 = 'O';
@@ -54,10 +55,12 @@ cases.forEach(maCase => {
             }
             if( tourJoueur === joueur1 ) {
                 tourJoueur = joueur2;
-                indicateur.innerText="Tour du joueur 2";              
+                indicateur.innerText="Tour du joueur 2";
+                indicateur.setAttribute("class","red");          
             }
             else {  tourJoueur = joueur1;
                     indicateur.innerText="Tour du joueur 1";
+                    indicateur.setAttribute("class","blue");  
             }
         }
     });
@@ -88,7 +91,6 @@ function ecranScore() {
                         ` 
     body.append(voile);
     body.append(popup);
-    let boutonRejouer = document.getElementById("rejouer");
     boutonRejouer.addEventListener("click", () => {
         voile.remove();
         popup.remove();
