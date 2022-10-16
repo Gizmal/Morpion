@@ -1,12 +1,10 @@
 const cases = document.querySelectorAll('.case');
 const indicateur = document.getElementById('indicateur');
-const finDePartie = document.getElementById('finDePartie');
 const body = document.querySelector("body");
 const voile = document.createElement("div");
 voile.setAttribute("id", "voile");
 const joueur1 = 'X';
 const joueur2 = 'O';
-const couleur ="";
 let msgFinPartie ="";
 let scoreJ1 = 0;
 let scoreJ2 = 0;
@@ -46,7 +44,7 @@ cases.forEach(maCase => {
                     msgFinPartie ="Victoire Joueur 2";
                 }
                 ecranScore();
-            };            
+            }
             if(nbreCoup === 9) {
                 matchNul++;
                 msgFinPartie ="Match Nul";                
@@ -55,11 +53,11 @@ cases.forEach(maCase => {
             if( tourJoueur === joueur1 ) {
                 tourJoueur = joueur2;
                 indicateur.innerText="Tour du joueur 2";
-                indicateur.setAttribute("class","red");          
+                indicateur.setAttribute("class","blue");
             }
             else {  tourJoueur = joueur1;
                 indicateur.innerText="Tour du joueur 1";
-                indicateur.setAttribute("class","blue");  
+                indicateur.setAttribute("class","red");
             }
         }
     });
@@ -84,7 +82,7 @@ function controleVictoire(tourJoueur) {
                             <h2 class="${tourJoueur}">${msgFinPartie}</h2>
                             <p class="red">Joueur 1  : ${scoreJ1}</p>
                             <p class="blue">Joueur 2  : ${scoreJ2}</p>
-                            <p>Match Nul : ${matchNul}</p>                            
+                            <p class="nul">Match Nul : ${matchNul}</p>                            
                             <button id="rejouer">Rejouer</button>
                             </div>
                             ` 
@@ -99,5 +97,5 @@ function controleVictoire(tourJoueur) {
                 maCase.classList.remove("blue", "red");
             });
     });
-};
+}
 
