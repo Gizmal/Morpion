@@ -6,6 +6,7 @@ const voile = document.createElement("div");
 voile.setAttribute("id", "voile");
 const joueur1 = 'X';
 const joueur2 = 'O';
+const couleur ="";
 let msgFinPartie ="";
 let scoreJ1 = 0;
 let scoreJ2 = 0;
@@ -27,8 +28,14 @@ const combinaisonsGagnantes = [
 cases.forEach(maCase => {
     maCase.addEventListener('click', () => {
         if(maCase.innerText==="") {
-            maCase.innerText=tourJoueur;
             nbreCoup++;
+            if(tourJoueur === joueur1) {
+                maCase.classList.add("red");
+            }
+            else {
+                maCase.classList.add("blue");
+            }
+            maCase.innerText=tourJoueur;            
             if(controleVictoire(tourJoueur)) {
                 if(tourJoueur === joueur1) {
                     scoreJ1++;
@@ -81,12 +88,14 @@ function ecranScore() {
                         ` 
     body.append(voile);
     body.append(popup);
-    boutonRejouer = document.getElementById("rejouer");
+    let boutonRejouer = document.getElementById("rejouer");
     boutonRejouer.addEventListener("click", () => {
         voile.remove();
         popup.remove();
         cases.forEach(maCase => {
             maCase.innerText = "";
+            maCase.classList.remove("blue", "red");
         });
     });
 };
+
