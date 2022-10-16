@@ -80,14 +80,14 @@ function controleVictoire(tourJoueur) {
         nbreCoup=0;
         popup.classList.add("popup");
         popup.innerHTML =   `
-        <div class="popup-header">
-        <h2>${msgFinPartie}</h2>
-        <p>Joueur 1  : ${scoreJ1}</p>
-        <p>Joueur 2  : ${scoreJ2}</p>
-        <p>Match Nul : ${matchNul}</p>                            
-        <button id="rejouer">Rejouer</button>
-        </div>
-        ` 
+                            <div class="popup-header">
+                            <h2>${msgFinPartie}</h2>
+                            <p>Joueur 1  : ${scoreJ1}</p>
+                            <p>Joueur 2  : ${scoreJ2}</p>
+                            <p>Match Nul : ${matchNul}</p>                            
+                            <button id="rejouer">Rejouer</button>
+                            </div>
+                            ` 
         body.append(voile);
         body.append(popup);
         const boutonRejouer = document.getElementById("rejouer");
