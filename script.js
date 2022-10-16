@@ -3,7 +3,6 @@ const indicateur = document.getElementById('indicateur');
 const finDePartie = document.getElementById('finDePartie');
 const body = document.querySelector("body");
 const voile = document.createElement("div");
-const boutonRejouer = document.getElementById("rejouer");
 voile.setAttribute("id", "voile");
 const joueur1 = 'X';
 const joueur2 = 'O';
@@ -24,7 +23,7 @@ const combinaisonsGagnantes = [
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6]
-  ];
+];
 
 cases.forEach(maCase => {
     maCase.addEventListener('click', () => {
@@ -59,8 +58,8 @@ cases.forEach(maCase => {
                 indicateur.setAttribute("class","red");          
             }
             else {  tourJoueur = joueur1;
-                    indicateur.innerText="Tour du joueur 1";
-                    indicateur.setAttribute("class","blue");  
+                indicateur.innerText="Tour du joueur 1";
+                indicateur.setAttribute("class","blue");  
             }
         }
     });
@@ -71,33 +70,34 @@ function controleVictoire(tourJoueur) {
         if( cases[recupCombinaison[0]].innerText === tourJoueur &&
             cases[recupCombinaison[1]].innerText === tourJoueur &&
             cases[recupCombinaison[2]].innerText === tourJoueur) {
-        return true;
-        }                                    
-    }           
-}
-
-function ecranScore() {
-    const popup = document.createElement("div");
-    nbreCoup=0;
-    popup.classList.add("popup");
-    popup.innerHTML =   `
-                        <div class="popup-header">
-                            <h2>${msgFinPartie}</h2>
-                            <p>Joueur 1  : ${scoreJ1}</p>
-                            <p>Joueur 2  : ${scoreJ2}</p>
-                            <p>Match Nul : ${matchNul}</p>                            
-                            <button id="rejouer">Rejouer</button>
-                        </div>
-                        ` 
-    body.append(voile);
-    body.append(popup);
-    boutonRejouer.addEventListener("click", () => {
-        voile.remove();
-        popup.remove();
-        cases.forEach(maCase => {
-            maCase.innerText = "";
-            maCase.classList.remove("blue", "red");
-        });
+                return true;
+            }                                    
+        }           
+    }
+    
+    function ecranScore() {
+        const popup = document.createElement("div");
+        nbreCoup=0;
+        popup.classList.add("popup");
+        popup.innerHTML =   `
+        <div class="popup-header">
+        <h2>${msgFinPartie}</h2>
+        <p>Joueur 1  : ${scoreJ1}</p>
+        <p>Joueur 2  : ${scoreJ2}</p>
+        <p>Match Nul : ${matchNul}</p>                            
+        <button id="rejouer">Rejouer</button>
+        </div>
+        ` 
+        body.append(voile);
+        body.append(popup);
+        const boutonRejouer = document.getElementById("rejouer");
+        boutonRejouer.addEventListener("click", () => {
+            voile.remove();
+            popup.remove();
+            cases.forEach(maCase => {
+                maCase.innerText = "";
+                maCase.classList.remove("blue", "red");
+            });
     });
 };
 
