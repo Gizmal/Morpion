@@ -67,10 +67,10 @@ body {
     border-radius: 10px;
 }
 
-.red {
+.red, .X {
     color : red;
 }
 
-.blue {
+.blue, .O {
     color :blue;
 }

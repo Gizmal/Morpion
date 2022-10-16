@@ -81,9 +81,9 @@ function controleVictoire(tourJoueur) {
         popup.classList.add("popup");
         popup.innerHTML =   `
                             <div class="popup-header">
-                            <h2>${msgFinPartie}</h2>
-                            <p>Joueur 1  : ${scoreJ1}</p>
-                            <p>Joueur 2  : ${scoreJ2}</p>
+                            <h2 class="${tourJoueur}">${msgFinPartie}</h2>
+                            <p class="red">Joueur 1  : ${scoreJ1}</p>
+                            <p class="blue">Joueur 2  : ${scoreJ2}</p>
                             <p>Match Nul : ${matchNul}</p>                            
                             <button id="rejouer">Rejouer</button>
                             </div>
