@@ -67,31 +67,37 @@ h1 {
     border-bottom: none;
 }
 
-#voile {
+#voileT, #voileO {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0;    
+}
+
+#voileO {
     background: #9793dd;
 }
 
 .popup {
-    background-color: rgba(51, 51, 53, 0.88);
+    background-color: rgba(61, 59, 53, 0.607);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    height: 200px;
+    height: 250px;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
 }
 
 .popup h2 {
-   padding: 10px 0;
+    font-size: 2rem;
+    padding: 10px 0;
 }
 .popup p {
+    font-weight: bolder;
+    font-size: 1.5rem;
     font-family: 'Roboto Slab', serif;
 
 }
@@ -115,19 +121,17 @@ h1 {
 }
 
 
-.red, .X {
-    background: #e8e5e5;
-    background: radial-gradient(circle farthest-corner at center center, rgba(253, 212, 8, 0.75) 0%, #fd7e05 78%);
+.red, .X {    
+    background: radial-gradient(ellipse farthest-corner at center center, #FF0000 0%, #FF564A 25%, #FF7A7A 50%, #CF8E87 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 
-.blue, .O {
-background: #ffffff;
-background: linear-gradient(to right, #8fd7cf 20%, #6393C1 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+.blue, .O {    
+    background: radial-gradient(ellipse farthest-corner at center center, #0505FF 0%, #3B48FF 25%, #7066FF 50%, #8787CF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nul {
@@ -135,4 +139,10 @@ background: linear-gradient(to right, #8fd7cf 20%, #6393C1 100%);
     background: linear-gradient( to right, rgb(255, 255, 255) 0%, #000000 25%, rgb(255, 255, 255) 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+section div .victoire {    
+    background: radial-gradient(ellipse farthest-corner at center center, #FF9900 0%, #FFD630 25%, #FFFA6E 50%, #CCCF68 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
 }
